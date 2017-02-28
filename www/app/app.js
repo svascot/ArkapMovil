@@ -1,4 +1,4 @@
-angular.module('arca', ['ionic', 'arca.modules'])
+angular.module('arca', ['ionic', 'arca.modules','ion-datetime-picker'])
 
 .run(function($ionicPlatform) {
   $ionicPlatform.ready(function() {
@@ -19,9 +19,18 @@ angular.module('arca', ['ionic', 'arca.modules'])
     $rootScope.goTo=function(state){
     return $state.go(state);
   }
-  $rootScope.vehiculos = [{imagen:'img/KIAPREGIO.jpg'},{imagen:'img/NISSANURVAN.jpg'},{imagen:'img/RENAULTMASTER.jpg'},{imagen:'img/YUTONG.jpg'}]
 
 })
+
+.run(function($ionicPickerI18n) {
+    $ionicPickerI18n.weekdays = ["Dom", "Lu", "Mar", "Mie", "Jue", "Vier", "Sab"];
+    $ionicPickerI18n.months = ["Enero", "Febrero", "Marzo", "Abril", "Mayo", "Junio", "Julio", "Agosto", "Septiembre", "Octubre", "Nobiembre", "Diciembre"];
+    $ionicPickerI18n.ok = "Aceptar";
+    $ionicPickerI18n.cancel = "Cancelar";
+    $ionicPickerI18n.okClass = "button-balanced";
+    $ionicPickerI18n.cancelClass = "button-stable";
+  })
+
 
 .config(function($stateProvider, $urlRouterProvider) {
   $stateProvider

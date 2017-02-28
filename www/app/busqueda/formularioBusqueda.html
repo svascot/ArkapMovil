@@ -1,17 +1,27 @@
 <ion-view view-title="Busca un vehiculo">
   <ion-content>
-   <ion-list >
-	  <ion-radio ng-model="tipoViaje" ng-value="SoloIda">Solo ida</ion-radio>
-	  <ion-radio ng-model="tipoViaje" ng-value="IdaYVuelta">Ida y vuelta (acompañado)</ion-radio>
+   <ion-list ng-init="tipoViaje='SoloIda'" >
+	  <ion-radio ng-model="tipoViaje" ng-value="'SoloIda'">Solo ida</ion-radio>
+	  <ion-radio ng-model="tipoViaje" ng-value="'IdaYVuelta'">Ida y vuelta (acompañado)</ion-radio>
 	</ion-list>
-	<label class="item item-input">
-	  <span class="input-label">Fecha y hora inicio</span>
+	<label class="item item-input"  >
+	  <span class="input-label">Fecha de inicio</span>
 	  <input type="date">
 	</label>
-	<label class="item item-input" >
-	  <span class="input-label">Fecha y hora regreso</span>
+	  <div class="item item-icon-left" ion-datetime-picker time ng-model="horaRecogida"    data-title= "'Selecciona una hora'">
+                <i class="icon ion-ios-clock balanced"></i>
+                Hora inicio:
+                <strong>{{horaRecogida| date: "H:mm"}}</strong>
+     </div>	
+	<label class="item item-input" ng-if="tipoViaje == 'IdaYVuelta'" >
+	  <span class="input-label">Fecha de regreso</span>
 	  <input type="date">
 	</label>
+	<div class="item item-icon-left" ion-datetime-picker time ng-model="horaSailda"    data-title= "'Selecciona una hora'" ng-if="tipoViaje == 'IdaYVuelta'">
+                <i class="icon ion-ios-clock balanced"></i>
+                Hora regreso:
+                <strong>{{horaSailda| date: "H:mm"}}</strong>
+    </div>	
 	<label class="item item-input">
 	  <span class="input-label">Lugar de recogida</span>
 	  <input type="text">

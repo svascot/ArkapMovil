@@ -9,7 +9,7 @@ angular.module('arca.formularioDeBusqueda', [])
   //$scope.$on('$ionicView.enter', function(e) {
   //});
 
-
+	$scope.timeValue = new Date();
 })
 
 
