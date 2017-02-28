@@ -1,0 +1,61 @@
+<ion-view view-title="Busca un vehiculo">
+  <ion-content>
+   <ion-list >
+	  <ion-radio ng-model="tipoViaje" ng-value="SoloIda">Solo ida</ion-radio>
+	  <ion-radio ng-model="tipoViaje" ng-value="IdaYVuelta">Ida y vuelta (acompañado)</ion-radio>
+	</ion-list>
+	<label class="item item-input">
+	  <span class="input-label">Fecha y hora inicio</span>
+	  <input type="date">
+	</label>
+	<label class="item item-input" >
+	  <span class="input-label">Fecha y hora regreso</span>
+	  <input type="date">
+	</label>
+	<label class="item item-input">
+	  <span class="input-label">Lugar de recogida</span>
+	  <input type="text">
+	</label>
+	<label class="item item-input">
+	  <span class="input-label">Lugar de destino</span>
+	  <input type="text">
+	</label>
+	<label class="item item-input">
+	  <span class="input-label">Numbero de pasajeros</span>
+	  <input type="number">
+	</label>
+	<ul class="list">
+
+	  <li class="item item-toggle">
+	     Aire acondicionado
+	     <label class="toggle toggle-balanced">
+	       <input type="checkbox">
+	       <div class="track">
+	         <div class="handle"></div>
+	       </div>
+	     </label>
+	  </li>
+	  <li class="item item-toggle">
+	     Movilidad reducida
+	     <label class="toggle toggle-balanced">
+	       <input type="checkbox">
+	       <div class="track">
+	         <div class="handle"></div>
+	       </div>
+	     </label>
+	  </li>
+	  <li class="item item-toggle">
+	     Baño
+	     <label class="toggle toggle-balanced">
+	       <input type="checkbox">
+	       <div class="track">
+	         <div class="handle"></div>
+	       </div>
+	     </label>
+	  </li>
+	</ul>
+	<button class="button button-block button-balanced" ng-click="goTo('app.resultados')" >
+	  Buscar vehiculos
+	</button>
+  </ion-content>
+</ion-view>
